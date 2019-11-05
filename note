@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Simple note-taking script
+# Alias => note
+# Author: Shawn Scott
+
+# Store the date and hostname 
+date=$(date)
+host=$(hostname)
+
+# Store topic if given
+if [ -z "$1" ]
+  then
+    topic="notes"
+  else
+    topic="$1"
+fi
+
+# Filename to write to
+filename="$topic.txt"
+
+# Path to send file
+path="$HOME/Desktop/scripts/notes/$filename"
+
+# Ask the user for input, reference => help read 
+read -p "Add note:
+" note
+
+# Note template
+echo "_______________________________________________________
+Author: $USER
+Date: $date
+Host: $host  
+
+Note: $note
+" >> "$path"    # Good practice to wrap varibles with double quotes
+
+# Message to user
+echo "Note '$note' saved to $path"

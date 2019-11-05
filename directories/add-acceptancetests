@@ -1,0 +1,24 @@
+mkdir $1.Acceptance.Tests && cd $1.Acceptance.Tests;
+touch $1.Acceptance.Tests.csproj;
+echo "<Project Sdk=\"Microsoft.NET.Sdk\">
+<PropertyGroup>
+  <TargetFramework>netcoreapp2.1</TargetFramework>
+</PropertyGroup>
+<ItemGroup>
+  <PackageReference Include=\"Amazon.Lambda.Core\" Version=\"1.1.0\" />
+  <PackageReference Include=\"Amazon.Lambda.TestUtilities\" Version=\"1.1.0\" />
+  <PackageReference Include=\"Amazon.Lambda.APIGatewayEvents\" Version=\"1.2.0\" />
+  <PackageReference Include=\"Microsoft.NET.Test.Sdk\" Version=\"15.5.0\" />
+  <PackageReference Include=\"xunit\" Version=\"2.3.1\" />
+  <PackageReference Include=\"xunit.runner.visualstudio\" Version=\"2.3.1\" />
+  <PackageReference Include=\"Microsoft.AspNetCore.TestHost\" Version=\"2.1.1\" />
+  <PackageReference Include=\"Microsoft.NETCore.TestHost\" Version=\"2.0.8\" />
+  <PackageReference Include=\"SkyAcceptanceTestBed\" Version=\"3.2.4\" />
+  <PackageReference Include=\"CompareNETObjects\" Version=\"4.63.0\" />
+</ItemGroup>
+<ItemGroup>
+  <ProjectReference Include=\"../$1/$1.csproj\" />
+</ItemGroup>
+</Project>">>$1.Acceptance.Tests.csproj;
+mkdir "Controllers";
+cd ..;

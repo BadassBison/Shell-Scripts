@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# .NET 2.1 API build
+# Author: Shawn Scott
+
+if [ -z "$1" ]
+    then
+        echo "Please give a name for the repository";                               # Validation that name is provided
+    else
+        dotnet new serverless.AspNetCoreWebAPI --name $1;                           # Build project               
+        cd $1;                                                                      # cd into project
+        mv src/$1 ./ && mv test/$1.Tests ./;                                        # Move nested folders to top level
+        rm -R src && rm -R test;                                                    # Delete unnecessary folders
+        rm ./$1/Controllers/S3ProxyController.cs;                                   # Remove unnecessary default controller
+        rm ./$1.Tests/S3ProxyControllerTests.cs;                                    # Remove unnecessary default controller tests
+        dotnet add $1.Tests/$1.Tests.csproj reference $1/$1.csproj                  # Update project reference
+        dotnet remove $1.Tests/$1.Tests.csproj reference ../../src/$1/$1.csproj;    # Remove old reference
+        git init;                                                                   # Initialize a git repo
+        dotnet new gitignore;                                                       # Add .gitignore to the project
+        echo "/.vscode">>.gitignore;                                                # Update .gitignore
+        echo "# $1\nBlank readme file">>README.md;                                  # Add README.md
+        ./directories/add-AcceptanceTests $1;                                       # Build a new xunit project                               
+        dotnet new sln;                                                             # Build a solution file
+        dotnet sln add $1/$1.csproj;                                                # Add project to solution file
+        dotnet sln add $1.Tests/$1.Tests.csproj;                                    # Add unit tests to solution file
+        dotnet sln add $1.Acceptance.Tests/$1.Acceptance.Tests.csproj;              # Add acceptance tests to solution file
+        dotnet restore;                                                             # Restore all projects
+        cd $1 && mkdir Database Entities Models Profiles Services && cd ..;         # Build additional directories
+        git add .;                                                                  # Add all changes
+        git commit -m "Initial Commit";                                             # Initial commit
+        code .;                                                                     # Open VS Code
+fi
