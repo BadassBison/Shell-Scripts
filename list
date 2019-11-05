@@ -5,5 +5,11 @@
 
 # Reference: http://goo.gl/ZThKCj
 
-printf "\e[32m|%20s \e[35m|%20s \e[36m|%20s |\e[00m\n" $(ls | sort -f)
+printf "\e[31m
+Files___________________\e[00m\n"
+printf "\e[32m|%20s \e[35m|%20s \e[36m|%20s |\e[00m\n" $(ls -p | grep -v / | sort -f)
+
+printf "\e[31m
+Directories_____________\e[00m\n"
+printf "\e[32m|%20s \e[35m|%20s \e[36m|%20s |\e[00m\n" $(ls -d */ | sort -f)
 exit 0

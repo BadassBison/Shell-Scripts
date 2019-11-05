@@ -1,0 +1,9 @@
+#!/bin/bash
+    
+# scripts
+# Author: Shawn Scott
+
+printf "\e[31m
+Scripts___________________\e[00m\n"
+printf "\e[32m|%20s \e[35m|%20s \e[36m|%20s |\e[00m\n" $(ls -p | grep -v / | sort -f)
+exit 0

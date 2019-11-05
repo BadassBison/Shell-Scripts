@@ -1,0 +1,12 @@
+#!/bin/bash
+    
+# Trash
+# Author: Shawn Scott
+
+if [[ -z $@ ]] then
+    echo "Please provide the file names to trash"
+    exit 1
+fi
+
+command mv "$@" ~/.Trash
+exit 0
