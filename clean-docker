@@ -1,0 +1,10 @@
+#!/bin/bash
+    
+# Scripts to clean Docker
+# Author: Shawn Scott
+
+# Stops & removes all containers, then removes all images
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker image ls -aq)
+exit 0
