@@ -23,6 +23,7 @@ now be called by simply typing the name of the file into your terminal.
 
 **Information**
 * References
+* Colors
 * Conditional Expressions
 * Debugging Scripts
 
@@ -41,6 +42,15 @@ now be called by simply typing the name of the file into your terminal.
 ### References
 Latest publication
 https://www.gnu.org/software/bash/manual/bash.pdf
+
+Colors
+https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
+
+***
+### Colors
+Black \e[30m
+Red \e[31m
 
 
 ***
