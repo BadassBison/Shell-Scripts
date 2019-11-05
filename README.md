@@ -16,12 +16,14 @@ unsure how to update your PATH, follow the steps below
 Once you have this on your PATH, bash will be able to locate the file names and
 run them with the name of the file. This is most effective if you leave off the
 `.sh` from the file names. Everything at the root level of this directory can 
-now be called by simply typing the name of the file into your terminal.
+now be called by simply typing the name of the file into your terminal. You can 
+keep any or all of the scripts you want to use. Simply delete all others.
 
 
 ## Table of Contents
 
 **Information**
+* About
 * References
 * Colors
 * Conditional Expressions
@@ -31,12 +33,23 @@ now be called by simply typing the name of the file into your terminal.
 * clean-docker
 * create-api
 * helloworld
+* list
 * newgame
 * newscript
 * note
+* scripts
+* trash
 
 
 ## Information
+
+***
+### About
+This is a bash library for people who want a much better user experience
+when it comes to using the terminal. This project will continue to grow as
+I do as a developer. This project is completely open source, so please message
+me if you would like to contribute. 
+
 
 ***
 ### References
@@ -88,6 +101,12 @@ others to use if they are unfamiliar with using bash scripts
 
 
 ***
+### list
+This script overrides the previous ls command providing much 
+better viewing in the terminal
+
+
+***
 ### newgame (unfinished)
 This is a directory builder for simple 2D games. The use of this
 was initially to clone a Github template and pull it down, but I've
@@ -109,3 +128,13 @@ This script will keep track of notes storing them in the notes directory.
 If you simply call `note` it will prompt you to add a note, then append it
 to notes.txt. If you provide a name `note <name>` then it will create a new
 file with that name and note
+
+
+***
+### scripts
+This script allows you to view what scripts are available
+
+
+***
+### trash
+This script will move a file to the trach opposed to removing it permanently
