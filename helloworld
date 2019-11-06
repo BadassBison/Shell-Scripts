@@ -4,4 +4,3 @@
 # Author: Shawn Scott
 
 echo helloworld 
-exit 0
