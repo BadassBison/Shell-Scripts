@@ -1,6 +1,7 @@
 #!/bin/bash
     
-# Trash
+# Move files to trash
+# Alias => trash
 # Author: Shawn Scott
 
 # Help message
@@ -17,8 +18,7 @@ Options:
 fi
 
 if [[ -z $1 ]] then
-    read -p "Please provide the names for the files to move to the trash:
-  " name
+    read -e -p "Please provide the names for the files to move to the trash: " name
 fi
 
 command mv "${name}" ~/.Trash

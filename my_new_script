@@ -1,6 +1,7 @@
 #!/bin/bash
     
 # Builds Bash Scripting files
+# Alias => newscript
 # Author: Shawn Scott
 
 # Help message
