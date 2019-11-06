@@ -1,0 +1,23 @@
+#!/bin/bash
+    
+# Show notes
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = -h ]] || [[ $1 = --help ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to show all saved notes in notes.txt
+
+where:
+  -h (--help) show help text
+
+  exit 0;"
+fi
+
+# Path to notes
+notepath=~/Desktop/scripts/notes/notes.txt
+
+# Open notes in less
+less $notepath

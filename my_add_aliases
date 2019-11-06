@@ -24,6 +24,8 @@ alias newscript=my_new_script               # Bash script template
 alias scripts=my_ls_scripts                 # List scripts
 alias trash=my_mv_file_to_trash             # Move file to trash
 alias note=my_take_note                     # Add a note
+alias show_notes=my_show_notes              # Show all notes in notes.txt
+alias capi=dotnet_create_api                # Build new dotnet api
 " >> $bp_path
 
 # User output
