@@ -3,19 +3,18 @@
 # Builds Bash Scripting files
 # Author: Shawn Scott
 
-if [[ -z $1 ]]
+if [[ -z "$1" ]]
   then
-    echo "Please give a name for your script file"
+    echo "Please give a name for your script file" >&2
     exit 1     
   else
     touch $1
-    chmod u+x $1
+    chmod u+x "$1"
     echo "#!/bin/bash
     
 # $1
 # Author: Shawn Scott
-" >> $1
+" >> "$1"
     
-    mv $1 ~/Desktop/scripts/$1
-    exit 0
+    mv "$1" ~/Desktop/scripts/"$1"
 fi
