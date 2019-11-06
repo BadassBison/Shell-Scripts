@@ -86,6 +86,9 @@ choosing, here is a list of my aliases. Add these to your ~/.bash_profile.
 You can call the script `my_add_aliases` to have them added for you.
 
 ```
+alias ls=my_ls                              # ls override
+alias mkdir=my_mkdir                        # mkdir override
+
 alias newscript=my_new_script               # Bash script template
 alias scripts=my_ls_scripts                 # List scripts
 alias trash=my_mv_file_to_trash             # Move file to trash
@@ -97,8 +100,15 @@ alias capi=dotnet_create_api                # Build new dotnet api
 
 ***
 ### Color Codes
-Black \e[30m
-Red \e[31m
+Color | Value | Code
+------|-------|-----
+Black | 30 | \e[30m
+Red | 31 | \e[31m
+Green | 32 | \e[32m
+Yellow | 33 | \e[33m
+Blue | 34 | \e[34m
+Magenta | 35 | \e[35m
+Cyan | 36 | \e[36m
 
 
 ***
@@ -165,25 +175,25 @@ dotnet new -all                             # list all templates
 ***
 ### Docker Commands
 ```
-docker ps                                           (View running containers)
-docker ps -a                                        (View all container instances)
-docker start <container name or id>                 (Start a container instance)
-docker stop <container name or id>                  (Stop a container instance)
-docker rm <container name or id>                    (Remove a stopped container instance)
-docker rmi <image name or id>                       (Remove an image that has zero instances)
-docker pull <repo name>                             (Pulls the repo and creates the image without a container instance)
-docker run <image name or id>                       (Creates an instance of the image. Pulls the repo if it doesn't exist)
-docker run -d <image name or id>                    (Creates a detached instance)
-docker attach <container name or id>                (Attaches to a detached container)
-docker run <name>:<tag>                             (Creates an instance of the image with the same tag)
-docker run -it <name>                               (Interactive & Sudo Terminal)
-docker run -p <host>:<mapped>                       (Map dockers exposed ports to different local ports)
-docker inspect <container name or id>               (More detail about the container)
-docker logs <container name or id>                  (Log information for the container)
-docker history <image name or id>                   (Shows image build history)
-docker rename <old container name> <new name>       (Renames containers)
-docker network ls                                   (Shows all networks. Defaults: bridge, host, none)
-docker build Dockerfile -t <image name> <path>      (Build a new image from a Dockerfile)
+docker ps                                           # View running containers
+docker ps -a                                        # View all container instances
+docker start <container name or id>                 # Start a container instance
+docker stop <container name or id>                  # Stop a container instance
+docker rm <container name or id>                    # Remove a stopped container instance
+docker rmi <image name or id>                       # Remove an image that has zero instances
+docker pull <repo name>                             # Pulls the repo and creates the image without a container instance
+docker run <image name or id>                       # Creates an instance of the image. Pulls the repo if it doesn't exist
+docker run -d <image name or id>                    # Creates a detached instance
+docker attach <container name or id>                # Attaches to a detached container
+docker run <name>:<tag>                             # Creates an instance of the image with the same tag
+docker run -it <name>                               # Interactive & Sudo Terminal
+docker run -p <host>:<mapped>                       # Map dockers exposed ports to different local ports
+docker inspect <container name or id>               # More detail about the container
+docker logs <container name or id>                  # Log information for the container
+docker history <image name or id>                   # Shows image build history
+docker rename <old container name> <new name>       # Renames containers
+docker network ls                                   # Shows all networks. Defaults: bridge, host, none
+docker build Dockerfile -t <image name> <path>      # Build a new image from a Dockerfile
 ```
 
 ## Scripts

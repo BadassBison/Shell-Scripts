@@ -20,6 +20,9 @@ fi
 bp_path=~/.bash_profile
 
 echo "
+alias ls=my_ls                              # ls override
+alias mkdir=my_mkdir                        # mkdir override
+
 alias newscript=my_new_script               # Bash script template
 alias scripts=my_ls_scripts                 # List scripts
 alias trash=my_mv_file_to_trash             # Move file to trash
