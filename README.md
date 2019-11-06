@@ -30,6 +30,7 @@ keep any or all of the scripts you want to use. Simply delete all others.
 * Conditional Expressions
 * Debugging Scripts
 * Git Commands
+* Angular Commands
 * Dotnet Commands
 * Docker Commands
 
@@ -65,8 +66,18 @@ https://www.gnu.org/software/bash/manual/bash.pdf
 Terminal color codes
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
+Git documentation
+https://git-scm.com/doc
+
+Angular documentation
+https://angular.io/cli
+
+Dotnet documentation
+https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x
+
 Docker documentation
 https://docs.docker.com/v17.12/edge/engine/reference/commandline/docker/#description
+
 
 ***
 ### Aliases
@@ -104,6 +115,7 @@ it to stop.
 ***
 ### Git Commands
 ```
+git init                                    # initialize a new git repos
 git status                                  # show status of all modified files
 git diff                                    # inspect changes in working directory
 git diff --staged                           # inspect changes on files in staging area
@@ -112,10 +124,12 @@ git add .                                   # adds all modified files to the sta
 git commit -m "<comment>"                   # commits changes with added message
 git log                                     # shows log of recent commits
 git stash                                   # stash changes made on current branch
-git remote add origin                       # add URL to Github repo
+git remote add origin <URL>                 # add URL to Github repo
+git remote set-url origin <URL>             # add new URL to origin
 git push -u origin master                   # push commits to Github repo
 git push -u origin <branchname>             # push commits to specified branch
 git branch                                  # lists all branches or creates a new branch
+git branch -m <branchname>                  # change the current branches name
 git branch -d <branchname>                  # deletes specified branch
 git checkout <branchname>                   # checks out specified branch
 git checkout -b <branchname>                # creates a new branch and checks it out
@@ -127,10 +141,23 @@ git rebase (more research needed)
 ```
 
 ***
+### Angular Commands
+```
+npm install -g @angular/cli                 # install angular cli globally
+ng help                                     # show help
+ng new <projectname>                        # create a new project
+ng g <command> <name>                       # uses templates to build files 
+```
+
+
+***
 ### Dotnet Commands
+```
 dotnet                                      # list of basic entry commands
 dotnet --help                               # list help for using dotnet cli
 dotnet -all                                 # see full SDK command list
+dotnet new -all                             # list all templates
+```
 
 
 ***
