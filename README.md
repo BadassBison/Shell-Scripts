@@ -1,7 +1,7 @@
 # Bash Scripts
 
 This is a directory to store Bash Scripts. To use this directory effectively, 
-make sure to update your PATH with the location of this diretory. If you are 
+make sure to update your PATH with the location of this directory. If you are 
 unsure how to update your PATH, follow the steps below
 
 1. In terminal, `cd` into the directory
