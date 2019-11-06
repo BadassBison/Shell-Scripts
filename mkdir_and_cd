@@ -1,0 +1,15 @@
+#!/bin/bash
+    
+# Makes a new diretory and cd's into it
+# Author: Shawn Scott
+
+if [[ -z $1 ]] 
+then
+  read -p "Please give a name for your new directory:
+  " name  
+else
+  name="$1"
+fi
+
+mkdir -p "$name" && cd "$name";
+printf
