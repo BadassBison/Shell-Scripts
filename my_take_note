@@ -17,6 +17,9 @@ where:
   exit 0;
 fi
 
+# Generate a note ID
+noteid=$(uuidgen)
+
 # Store the date using standard `date` format
 #printf -v date "%(%a %e %b %X %Z %Y)T\n" -1
 date=$(date)
@@ -40,6 +43,7 @@ read -e -p "Add note: " note
 
 # Note template
 echo "_______________________________________________________
+Note ID: $noteid
 Author: $USER ($UID)
 Date: $date
 Host: ${HOSTNAME:-`hostname`}
