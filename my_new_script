@@ -11,7 +11,7 @@ $(basename "$0") [-h] (name)
   -- script to build template for other scripts
 
 where:
-  --help (-h) show help text
+  -h (--help) show help text
 "
   exit 0;
 fi
@@ -34,11 +34,28 @@ touch "$name"
 # Change the permissions so the file is executable
 chmod u+x "$name"
 
+# Strings variables
+flag="\$1"
+base="\$(basename \"\$0\")"
+
 # Build the template
 echo "#!/bin/bash
     
 # $name
 # Author: Shawn Scott
+
+# Help message
+if [[ $flag = "-h" ]] || [[ $flag = "--help" ]]
+then
+  echo \"
+$base [-h] (name)
+  -- script to <add content here>
+
+where:
+  -h (--help) show help text
+
+  exit 0;\"
+fi
 " >> $name
 
 # Move file to scripts directory

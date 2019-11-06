@@ -4,6 +4,19 @@
 # Alias => note
 # Author: Shawn Scott
 
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to track notes 
+
+where:
+  -h (--help) show help text
+"
+  exit 0;
+fi
+
 # Store the date and hostname 
 date=$(date)
 host=$(hostname)

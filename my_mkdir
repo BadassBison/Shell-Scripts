@@ -1,0 +1,33 @@
+#!/bin/bash
+    
+# Makes a new diretory and cd's into it
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+Usage: $(basename "$0") [options] [arguments]
+  -- script to build new directories
+
+Options:
+  -h|--help           Display help text
+"
+  exit 0;
+fi
+
+# Prompt user if name was not given
+if [[ -z $1 ]] 
+then
+  read -p "Please give a name for your new directory:
+  " name  
+else
+  name="$1"
+fi
+
+# Build directory
+mkdir -p "$name"
+
+# User output
+echo "Created directory $name"
+exit 0

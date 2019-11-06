@@ -1,0 +1,31 @@
+#!/bin/bash
+    
+# List's contents of a directory in a table
+# Author: Shawn Scott
+
+# Reference: http://goo.gl/ZThKCj
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+Usage: $(basename "$0") [options]
+  -- script to list contents in directories better
+
+Options:
+  -h|--help           Display help text
+"
+  exit 0;
+fi
+
+# Width of columns
+width=22
+
+printf "\e[31m
+Files______________________\e[00m\n"
+printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -p | grep -v / | sort -f)
+
+printf "\e[31m
+Directories________________\e[00m\n"
+printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -d */ | sort -f)
+exit 0
