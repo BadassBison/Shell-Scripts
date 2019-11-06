@@ -60,30 +60,30 @@ message me if you would like to contribute.
 
 ***
 ### References
-Latest publication
+Latest publication:
 https://www.gnu.org/software/bash/manual/bash.pdf
 
-Terminal color codes
+Terminal color codes:
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
-Git documentation
+Git documentation:
 https://git-scm.com/doc
 
-Angular documentation
+Angular documentation:
 https://angular.io/cli
 
-Dotnet documentation
+Dotnet documentation:
 https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x
 
-Docker documentation
+Docker documentation:
 https://docs.docker.com/v17.12/edge/engine/reference/commandline/docker/#description
 
 
 ***
 ### Aliases
 For better script names, you should alias the scripts to something of your
-choosing, here is a list of my aliases. Add these to your ~/.bash_profile.
-You can call the script `my_add_aliases` to have them added for you.
+choosing. Here is a list of my aliases for reference, add these to your 
+~/.bash_profile. You can call the script `my_add_aliases` to have them added for you.
 
 ```
 alias ls=my_ls                              # ls override
@@ -207,8 +207,7 @@ then removing the images
 ***
 ### dotnet_create_api (unfinished)
 This script is for building a .NET core 2.1 API to be used with
-AWS. The build has a dependency in the directories folder and is
-unfinished at this point
+AWS. The build has a dependency in the directories folder
 
 
 ***
@@ -218,7 +217,7 @@ This script changes the git author and committer information
 
 ***
 ### my_add_aliases
-This script adds the default aliased to the .bash_profile
+This script adds the default aliases to the .bash_profile
 
 
 ***
@@ -231,8 +230,8 @@ custom directory get build and create a new Github repo when initialized
 
 ***
 ### my_helloworld
-This is the most basic script, there as an entry point and for
-others to use if they are unfamiliar with using bash scripts
+This is the most basic script. This is a good script to tinker with if 
+you are unfamiliar with using bash scripts
 
 
 ***
@@ -262,9 +261,14 @@ This script is used to provide the basic template when writing scripts.
 
 
 ***
+### my_show_notes
+This script will show the notes you have saved in notes.txt using the
+less program. Simply type 'q' to quit
+
+
+***
 ### my_take_note
 This script will keep track of notes storing them in the notes directory.
 If you simply call `note` it will prompt you to add a note, then append it
 to notes.txt. If you provide a name `note <name>` then it will create a new
 file with that name and note
-
