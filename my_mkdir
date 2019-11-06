@@ -30,4 +30,3 @@ mkdir -p "$name"
 
 # User output
 echo "Created directory $name"
-exit 0

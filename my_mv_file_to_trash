@@ -22,4 +22,3 @@ if [[ -z $1 ]] then
 fi
 
 command mv "${name}" ~/.Trash
-exit 0

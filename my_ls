@@ -28,4 +28,3 @@ printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -p
 printf "\e[31m
 Directories________________\e[00m\n"
 printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -d */ | sort -f)
-exit 0

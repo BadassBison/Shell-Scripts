@@ -63,4 +63,3 @@ mv $name $script_path
 
 # Give user output
 echo "Created script template '${name}' at ${script_path}"
-exit 0

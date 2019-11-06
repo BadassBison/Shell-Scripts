@@ -45,4 +45,3 @@ git filter-branch -f --env-filter "
 # User output
 echo "Git author name and committer name changed to $name"
 echo "Git author email and committer email change to $email"
-exit 0
