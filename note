@@ -4,9 +4,8 @@
 # Alias => note
 # Author: Shawn Scott
 
-# Store the date and hostname 
-date=$(date)
-host=$(hostname)
+# Store the date using standard `date` format
+printf -v date "%(%a %e %b %X %Z %Y)T\n" -1
 
 # Store topic if given
 if [ -z "$1" ]
@@ -22,18 +21,17 @@ filename="$topic.txt"
 # Path to send file
 path="$HOME/Desktop/scripts/notes/$filename"
 
-# Ask the user for input, reference => help read 
-read -p "Add note:
-" note
+# Ask the user for input, reference => help read
+read -e -p "Add note: " note
 
 # Note template
 echo "_______________________________________________________
-Author: $USER
+Author: $USER ($UID)
 Date: $date
-Host: $host  
+Host: ${HOSTNAME:-`hostname`}
 
 Note: $note
-" >> "$path"    # Good practice to wrap varibles with double quotes
+" >> "$path"    # Good practice to wrap variables with double quotes
 
 # Message to user
-echo "Note '$note' saved to $path"
+echo "Note '$note' saved to: $path"
