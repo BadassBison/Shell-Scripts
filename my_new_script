@@ -1,0 +1,66 @@
+#!/bin/bash
+    
+# Builds Bash Scripting files
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to build template for other scripts
+
+where:
+  -h (--help) show help text
+"
+  exit 0;
+fi
+
+# Check if user gave a name, if not, prompt them to
+if [[ -z $1 ]] 
+then
+  read -p "Please give a name for your new script:
+  " name  
+else
+  name="$1"
+fi
+
+# Path for the file
+script_path="${HOME}/Desktop/scripts/${name}"
+
+# Make the file for the new script
+touch "$name"
+
+# Change the permissions so the file is executable
+chmod u+x "$name"
+
+# Strings variables
+flag="\$1"
+base="\$(basename \"\$0\")"
+
+# Build the template
+echo "#!/bin/bash
+    
+# $name
+# Author: Shawn Scott
+
+# Help message
+if [[ $flag = "-h" ]] || [[ $flag = "--help" ]]
+then
+  echo \"
+$base [-h] (name)
+  -- script to <add content here>
+
+where:
+  -h (--help) show help text
+
+  exit 0;\"
+fi
+" >> $name
+
+# Move file to scripts directory
+mv $name $script_path
+
+# Give user output
+echo "Created script template '${name}' at ${script_path}"
+exit 0

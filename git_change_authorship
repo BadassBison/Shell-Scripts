@@ -1,0 +1,48 @@
+#!/bin/bash
+    
+# Change the authorship for git commits
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+$(basename "$0") [-h] (name) (email)
+  -- script to change authorship for git commits 
+
+where:
+  -h (--help) show help text
+"
+  exit 0;
+fi
+
+# Prompt user if name was not given
+if [[ -z $1 ]] 
+then
+  read -p "Please give a name for new author:
+  " name  
+else
+  name="$1"
+fi
+
+# Prompt user if email was not given
+if [[ -z $2 ]] 
+then
+  read -p "Please give an email for new author:
+  " email  
+else
+  email="$2"
+fi
+
+# Change the authorship
+git filter-branch -f --env-filter "
+    GIT_AUTHOR_NAME=\"$name\"
+    GIT_AUTHOR_EMAIL=\"$email\"
+    GIT_COMMITTER_NAME=\"$name\"
+    GIT_COMMITTER_EMAIL=\"$email\"
+"
+
+# User output
+echo "Git author name and committer name changed to $name"
+echo "Git author email and committer email change to $email"
+exit 0

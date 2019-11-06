@@ -1,0 +1,25 @@
+#!/bin/bash
+    
+# scripts
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+Usage: $(basename "$0") [options] [arguments]
+  -- script to list all available scripts
+
+Options:
+  -h|--help           Display help text
+"
+  exit 0;
+fi
+
+# Width of the columns
+width=22
+
+printf "\e[31m
+Scripts___________________\n"
+printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -p | grep -v [/.] | sort -f)
+exit 0

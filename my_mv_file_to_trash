@@ -1,0 +1,25 @@
+#!/bin/bash
+    
+# Trash
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+Usage: $(basename "$0") [options] [arguments]
+  -- script to move files to the trash
+
+Options:
+  -h|--help           Display help text
+"
+  exit 0;
+fi
+
+if [[ -z $1 ]] then
+    read -p "Please provide the names for the files to move to the trash:
+  " name
+fi
+
+command mv "${name}" ~/.Trash
+exit 0

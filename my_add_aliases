@@ -1,0 +1,30 @@
+#!/bin/bash
+    
+# Add aliases to .bash_profile
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to add aliases to .bash_profile
+
+where:
+  -h (--help) show help text
+"
+  exit 0;
+fi
+
+# Path to .bash_profile
+bp_path=~/.bash_profile
+
+echo "
+alias newscript=my_new_script               # Bash script template
+alias scripts=my_ls_scripts                 # List scripts
+alias trash=my_mv_file_to_trash             # Move file to trash
+alias note=my_take_note                     # Add a note
+" >> $bp_path
+
+# User output
+echo "Script aliases add to $bp_path"
