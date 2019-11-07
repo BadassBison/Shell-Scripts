@@ -95,6 +95,7 @@ alias trash=my_mv_file_to_trash             # Move file to trash
 alias note=my_take_note                     # Add a note
 alias show_notes=my_show_notes              # Show all notes in notes.txt
 alias capi=dotnet_create_api                # Build new dotnet api
+alias qod=my_quote_of_the_day               # Fetch a new quote everyday
 ```
 
 
@@ -113,7 +114,7 @@ Cyan | 36 | \e[36m
 
 ***
 ### Conditional Expressions
-These are wrote as follow `[[ Expression ]]` with 2 brackets.
+These are wrote with 2 brackets => `[[ Expression ]]` 
 
 
 ***
@@ -200,7 +201,7 @@ docker build Dockerfile -t <image name> <path>      # Build a new image from a D
 
 ***
 ### docker_clean
-This script is for stoping and removing all docker containers,
+This script is for stopping and removing all docker containers,
 then removing the images
 
 

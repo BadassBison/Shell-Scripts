@@ -1,0 +1,22 @@
+#!/bin/bash
+    
+# Quote of the day
+# Author: Shawn Scott
+
+# Help message
+if [[ $1 = -h ]] || [[ $1 = --help ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to fetch a new quote everyday
+
+where:
+  -h (--help) show help text
+
+  exit 0;"
+fi
+
+# needs to filter out extra contents and return only the qoute to the terminal
+# API has a 10 request per hour limit
+quote=$(curl "http://quotes.rest/qod.json?category=inspire")
+echo "$quote" | grep -o '' > notes/quote.txt

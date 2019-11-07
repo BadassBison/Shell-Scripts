@@ -29,6 +29,7 @@ alias trash=my_mv_file_to_trash             # Move file to trash
 alias note=my_take_note                     # Add a note
 alias show_notes=my_show_notes              # Show all notes in notes.txt
 alias capi=dotnet_create_api                # Build new dotnet api
+alias qod=my_quote_of_the_day               # Fetch a new quote everyday
 " >> $bp_path
 
 # User output
