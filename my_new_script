@@ -1,5 +1,5 @@
 #!/bin/bash
-    
+
 # Builds Bash Scripting files
 # Alias => newscript
 # Author: Shawn Scott
@@ -18,10 +18,10 @@ where:
 fi
 
 # Check if user gave a name, if not, prompt them to
-if [[ -z $1 ]] 
+if [[ -z $1 ]]
 then
   read -p "Please give a name for your new script:
-  " name  
+  " name
 else
   name="$1"
 fi
@@ -41,7 +41,7 @@ base="\$(basename \"\$0\")"
 
 # Build the template
 echo "#!/bin/bash
-    
+
 # $name
 # Author: Shawn Scott
 

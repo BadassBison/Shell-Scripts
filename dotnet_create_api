@@ -7,7 +7,7 @@ if [ -z "$1" ]
     then
         echo "Please give a name for the repository";                               # Validation that name is provided
     else
-        dotnet new serverless.AspNetCoreWebAPI --name $1;                           # Build project               
+        dotnet new serverless.AspNetCoreWebAPI --name $1;                           # Build project
         cd $1;                                                                      # cd into project
         mv src/$1 ./ && mv test/$1.Tests ./;                                        # Move nested folders to top level
         rm -R src && rm -R test;                                                    # Delete unnecessary folders
@@ -19,7 +19,7 @@ if [ -z "$1" ]
         dotnet new gitignore;                                                       # Add .gitignore to the project
         echo "/.vscode">>.gitignore;                                                # Update .gitignore
         echo "# $1\nBlank readme file">>README.md;                                  # Add README.md
-        ./directories/add-AcceptanceTests $1;                                       # Build a new xunit project                               
+        ./directories/add-AcceptanceTests $1;                                       # Build a new xunit project
         dotnet new sln;                                                             # Build a solution file
         dotnet sln add $1/$1.csproj;                                                # Add project to solution file
         dotnet sln add $1.Tests/$1.Tests.csproj;                                    # Add unit tests to solution file

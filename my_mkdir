@@ -1,5 +1,5 @@
 #!/bin/bash
-    
+
 # Makes a new diretory and cd's into it
 # Author: Shawn Scott
 
@@ -17,10 +17,10 @@ Options:
 fi
 
 # Prompt user if name was not given
-if [[ -z $1 ]] 
+if [[ -z $1 ]]
 then
   read -p "Please give a name for your new directory:
-  " name  
+  " name
 else
   name="$1"
 fi

@@ -1,7 +1,7 @@
 # Bash Scripts
 
-This is a directory to store Bash Scripts. To use this directory effectively, 
-make sure to update your PATH with the location of this directory. If you are 
+This is a directory to store Bash Scripts. To use this directory effectively,
+make sure to update your PATH with the location of this directory. If you are
 unsure how to update your PATH, follow the steps below
 
 1. In terminal, `cd` into the directory
@@ -15,8 +15,8 @@ unsure how to update your PATH, follow the steps below
 
 Once you have this on your PATH, bash will be able to locate the file names and
 run them with the name of the file. This is most effective if you leave off the
-`.sh` from the file names. Everything at the root level of this directory can 
-now be called by simply typing the name of the file into your terminal. You can 
+`.sh` from the file names. Everything at the root level of this directory can
+now be called by simply typing the name of the file into your terminal. You can
 keep any or all of the scripts you want to use. Simply delete all others.
 
 
@@ -54,8 +54,8 @@ keep any or all of the scripts you want to use. Simply delete all others.
 ### About
 This is a bash library for people who want a much better user experience
 when it comes to using the terminal. This project will continue to grow as
-I do as a developer. This project is completely open source, so please 
-message me if you would like to contribute. 
+I do as a developer. This project is completely open source, so please
+message me if you would like to contribute.
 
 
 ***
@@ -82,7 +82,7 @@ https://docs.docker.com/v17.12/edge/engine/reference/commandline/docker/#descrip
 ***
 ### Aliases
 For better script names, you should alias the scripts to something of your
-choosing. Here is a list of my aliases for reference, add these to your 
+choosing. Here is a list of my aliases for reference, add these to your
 ~/.bash_profile. You can call the script `my_add_aliases` to have them added for you.
 
 ```
@@ -94,7 +94,7 @@ alias scripts=my_ls_scripts                 # List scripts
 alias trash=my_mv_file_to_trash             # Move file to trash
 alias note=my_take_note                     # Add a note
 alias show_notes=my_show_notes              # Show all notes in notes.txt
-alias capi=dotnet_create_api                # Build new dotnet api 
+alias capi=dotnet_create_api                # Build new dotnet api
 ```
 
 
@@ -120,7 +120,7 @@ These are wrote as follow `[[ Expression ]]` with 2 brackets.
 ### Debugging Scripts
 To have the entire script show its output in the terminal, append `-x`
 to the first line `#!/bin/bash -x`. If you want more limited output, put
-`set -x` where you want to start debugging and `set +x` where you want 
+`set -x` where you want to start debugging and `set +x` where you want
 it to stop.
 
 
@@ -158,7 +158,7 @@ git rebase (more research needed)
 npm install -g @angular/cli                 # install angular cli globally
 ng help                                     # show help
 ng new <projectname>                        # create a new project
-ng g <command> <name>                       # uses templates to build files 
+ng g <command> <name>                       # uses templates to build files
 ```
 
 
@@ -200,7 +200,7 @@ docker build Dockerfile -t <image name> <path>      # Build a new image from a D
 
 ***
 ### docker_clean
-This script is for stoping and removing all docker containers, 
+This script is for stoping and removing all docker containers,
 then removing the images
 
 
@@ -230,13 +230,13 @@ custom directory get build and create a new Github repo when initialized
 
 ***
 ### my_helloworld
-This is the most basic script. This is a good script to tinker with if 
+This is the most basic script. This is a good script to tinker with if
 you are unfamiliar with using bash scripts
 
 
 ***
 ### my_ls
-This script overrides the previous ls command providing much 
+This script overrides the previous ls command providing much
 better viewing in the terminal
 
 
