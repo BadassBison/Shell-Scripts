@@ -19,7 +19,7 @@ Options:
 fi
 
 # Width of columns
-width=22
+width=32
 
 printf "\e[31m
 Files______________________\e[00m\n"
