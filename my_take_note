@@ -5,20 +5,26 @@
 # Author: Shawn Scott
 
 # Help message
-if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
-then
+case "$1" in
+  -h|--help)
   echo "
-$(basename "$0") [-h] (name)
+${0##*/} [-h] (name)
   -- script to track notes
 
 where:
-  -h (--help) show help text
+  -h (--help) show this help text
 "
-  exit 0;
-fi
+  exit 0 ;;
+esac
 
 # Generate a note ID
-noteid=$(uuidgen)
+if type -fP uuidgen > /dev/null 2>&1; then
+  noteid=$(uuidgen)
+else
+  # Basic fallback, if uuidgen isn't available.
+  printf -v noteid "%.10d\n" $RANDOM$RANDOM
+fi
+
 
 # Store the date using standard `date` format
 #printf -v date "%(%a %e %b %X %Z %Y)T\n" -1

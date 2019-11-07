@@ -1,5 +1,5 @@
 #!/bin/bash
-    
+
 # Change the authorship for git commits
 # Author: Shawn Scott
 
@@ -8,7 +8,7 @@ if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
 then
   echo "
 $(basename "$0") [-h] (name) (email)
-  -- script to change authorship for git commits 
+  -- script to change authorship for git commits
 
 where:
   -h (--help) show help text
@@ -17,19 +17,19 @@ where:
 fi
 
 # Prompt user if name was not given
-if [[ -z $1 ]] 
+if [[ -z $1 ]]
 then
   read -p "Please give a name for new author:
-  " name  
+  " name
 else
   name="$1"
 fi
 
 # Prompt user if email was not given
-if [[ -z $2 ]] 
+if [[ -z $2 ]]
 then
   read -p "Please give an email for new author:
-  " email  
+  " email
 else
   email="$2"
 fi
