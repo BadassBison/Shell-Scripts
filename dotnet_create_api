@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # .NET 2.1 API build
-# Author: Shawn Scott
 
 if [ -z "$1" ]
     then

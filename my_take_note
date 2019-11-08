@@ -2,7 +2,6 @@
 
 # Simple note-taking script
 # Alias => note
-# Author: Shawn Scott
 
 # Help message
 case "$1" in

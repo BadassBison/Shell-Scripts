@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Makes a new diretory and cd's into it
-# Author: Shawn Scott
 
 # Help message
 if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]

@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # List's contents of a directory in a table
-# Author: Shawn Scott
-
 # Reference: http://goo.gl/ZThKCj
 
 # Help message

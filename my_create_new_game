@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Directory build for quick games
-# Author: Shawn Scott
 
 # TODO: have the git repo created on Github upon this script getting called
 # TODO: Update game template to use

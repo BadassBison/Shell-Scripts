@@ -2,7 +2,6 @@
 
 # Builds Bash Scripting files
 # Alias => newscript
-# Author: Shawn Scott
 
 # Help message
 if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
@@ -43,7 +42,6 @@ base="\$(basename \"\$0\")"
 echo "#!/bin/bash
 
 # $name
-# Author: Shawn Scott
 
 # Help message
 if [[ $flag = "-h" ]] || [[ $flag = "--help" ]]

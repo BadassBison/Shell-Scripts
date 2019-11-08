@@ -1,6 +1,5 @@
 #!/bin/bash
 
 # Hello, world!
-# Author: Shawn Scott
 
 echo helloworld

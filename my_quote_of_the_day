@@ -1,6 +1,5 @@
 #!/bin/bash
 # Quote of the day
-# Author: Shawn Scott
 
 project="${0##*/}"
 

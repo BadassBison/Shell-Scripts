@@ -2,7 +2,6 @@
 
 # Move files to trash
 # Alias => trash
-# Author: Shawn Scott
 
 # Help message
 if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]

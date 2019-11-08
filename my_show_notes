@@ -2,7 +2,6 @@
 
 # Show notes
 # Alias => show_notes
-# Author: Shawn Scott
 
 # Help message
 if [[ $1 = -h ]] || [[ $1 = --help ]]

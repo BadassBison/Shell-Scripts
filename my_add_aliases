@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Add aliases to .bash_profile
-# Author: Shawn Scott
 
 # Help message
 if [[ $1 = "-h" ]] || [[ $1 = "--help" ]]
