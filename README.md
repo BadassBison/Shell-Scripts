@@ -1,4 +1,4 @@
-# Bash Scripts
+# Shell Scripts
 
 This is a directory to store Bash Scripts. To use this directory effectively,
 make sure to update your PATH with the location of this directory. If you are
@@ -19,88 +19,85 @@ run them with the name of the file. This is most effective if you leave off the
 now be called by simply typing the name of the file into your terminal. You can
 keep any or all of the scripts you want to use. Simply delete all others.
 
-
 ## Table of Contents
 
-**Information**
-* About
-* References
-* Aliases
-* Color Codes
-* Conditional Expressions
-* Debugging Scripts
-* Git Commands
-* Angular Commands
-* Dotnet Commands
-* Docker Commands
+### Information
 
-**Scripts**
-* docker_clean
-* dotnet_create_api
-* git_change_authorship
-* my_create_new_game
-* my_helloworld
-* my_ls
-* my_ls_scripts
-* my_mkdir
-* my_mv_file_to_trash
-* my_new_script
-* my_take_note
+- About
+- References
+- Aliases
+- Color Codes
+- Conditional Expressions
+- Debugging Scripts
+- Git Commands
+- Angular Commands
+- Dotnet Commands
+- Docker Commands
 
+### Scripts
 
-## Information
+- docker_clean
+- dotnet_create_api
+- git_change_authorship
+- my_create_new_game
+- my_helloworld
+- my_ls
+- my_ls_scripts
+- my_mkdir
+- my_mv_file_to_trash
+- my_new_script
+- my_quote_of_the_day
+- my_show_notes
+- my_take_note
 
-***
 ### About
+
 This is a bash library for people who want a much better user experience
 when it comes to using the terminal. This project will continue to grow as
 I do as a developer. This project is completely open source, so please
 message me if you would like to contribute.
 
-
 ***
+
 ### References
-Latest publication:
-https://www.gnu.org/software/bash/manual/bash.pdf
 
-Terminal color codes:
-https://misc.flogisoft.com/bash/tip_colors_and_formatting
+[Latest Bash publication](https://www.gnu.org/software/bash/manual/bash.pdf)
 
-Git documentation:
-https://git-scm.com/doc
+[Terminal color codes](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 
-Angular documentation:
-https://angular.io/cli
+[Git documentation](https://git-scm.com/doc)
 
-Dotnet documentation:
-https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x
+[Angular documentation](https://angular.io/cli)
 
-Docker documentation:
-https://docs.docker.com/v17.12/edge/engine/reference/commandline/docker/#description
+[Dotnet documentation](https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x)
 
+[Docker documentation](https://docs.docker.com/v17.12/edge/engine/reference/commandline/docker/#description)
 
 ***
+
 ### Aliases
+
 For better script names, you should alias the scripts to something of your
 choosing. Here is a list of my aliases for reference, add these to your
 ~/.bash_profile. You can call the script `my_add_aliases` to have them added for you.
 
-```
+```bash
 alias ls=my_ls                              # ls override
 alias mkdir=my_mkdir                        # mkdir override
 
 alias newscript=my_new_script               # Bash script template
 alias scripts=my_ls_scripts                 # List scripts
-alias trash=my_mv_file_to_trash             # Move file to trash
 alias note=my_take_note                     # Add a note
 alias show_notes=my_show_notes              # Show all notes in notes.txt
-alias capi=dotnet_create_api                # Build new dotnet api
 alias qod=my_quote_of_the_day               # Fetch a new quote everyday
+alias trash=my_mv_file_to_trash             # Move file to trash
+alias capi=dotnet_create_api                # Build new dotnet api
 ```
 
-
 ***
+
 ### Color Codes
+
 Color | Value | Code
 ------|-------|-----
 Black | 30 | \e[30m
@@ -111,23 +108,26 @@ Blue | 34 | \e[34m
 Magenta | 35 | \e[35m
 Cyan | 36 | \e[36m
 
-
 ***
+
 ### Conditional Expressions
-These are wrote with 2 brackets => `[[ Expression ]]` 
 
+These are wrote with 2 brackets => `[[ Expression ]]`
 
 ***
+
 ### Debugging Scripts
+
 To have the entire script show its output in the terminal, append `-x`
 to the first line `#!/bin/bash -x`. If you want more limited output, put
 `set -x` where you want to start debugging and `set +x` where you want
 it to stop.
 
-
 ***
+
 ### Git Commands
-```
+
+```bash
 git init                                    # initialize a new git repos
 git status                                  # show status of all modified files
 git diff                                    # inspect changes in working directory
@@ -154,28 +154,32 @@ git rebase (more research needed)
 ```
 
 ***
+
 ### Angular Commands
-```
+
+```bash
 npm install -g @angular/cli                 # install angular cli globally
 ng help                                     # show help
 ng new <projectname>                        # create a new project
 ng g <command> <name>                       # uses templates to build files
 ```
 
-
 ***
+
 ### Dotnet Commands
-```
+
+```bash
 dotnet                                      # list of basic entry commands
 dotnet --help                               # list help for using dotnet cli
 dotnet -all                                 # see full SDK command list
 dotnet new -all                             # list all templates
 ```
 
-
 ***
+
 ### Docker Commands
-```
+
+```bash
 docker ps                                           # View running containers
 docker ps -a                                        # View all container instances
 docker start <container name or id>                 # Start a container instance
@@ -197,78 +201,97 @@ docker network ls                                   # Shows all networks. Defaul
 docker build Dockerfile -t <image name> <path>      # Build a new image from a Dockerfile
 ```
 
-## Scripts
-
 ***
+
 ### docker_clean
+
 This script is for stopping and removing all docker containers,
 then removing the images
 
-
 ***
+
 ### dotnet_create_api (unfinished)
+
 This script is for building a .NET core 2.1 API to be used with
 AWS. The build has a dependency in the directories folder
 
-
 ***
+
 ### git_change_authorship
+
 This script changes the git author and committer information
 
-
 ***
+
 ### my_add_aliases
+
 This script adds the default aliases to the .bash_profile
 
-
 ***
+
 ### my_create_new_game (unfinished)
+
 This is a directory builder for simple 2D games. The use of this
 was initially to clone a Github template and pull it down, but I've
 since changed directions and feel it would be better to have a
 custom directory get build and create a new Github repo when initialized
 
-
 ***
+
 ### my_helloworld
+
 This is the most basic script. This is a good script to tinker with if
 you are unfamiliar with using bash scripts
 
-
 ***
+
 ### my_ls
+
 This script overrides the previous ls command providing much
 better viewing in the terminal
 
-
 ***
+
 ### my_ls_scripts
+
 This script shows the available scripts
 
-
 ***
+
 ### my_mkdir
+
 This script provides better UX for the mkdir command
 
-
 ***
+
 ### my_mv_file_to_trash
+
 This script allows for files to be moved to the trash opposed to
 just deleting them with rm
 
 ***
+
 ### my_new_script
+
 This script is used to provide the basic template when writing scripts.
 
+***
+
+### my_quote_of_the_day
+
+This script will provide you with an inspirational quote sent to your terminal
 
 ***
+
 ### my_show_notes
+
 This script will show the notes you have saved in notes.txt using the
 less program. Simply type 'q' to quit
 
-
 ***
+
 ### my_take_note
+
 This script will keep track of notes storing them in the notes directory.
 If you simply call `note` it will prompt you to add a note, then append it
 to notes.txt. If you provide a name `note <name>` then it will create a new
