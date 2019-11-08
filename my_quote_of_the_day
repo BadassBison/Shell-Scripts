@@ -6,15 +6,15 @@ project="${0##*/}"
 url="http://quotes.rest/qod.json?category=inspire"
 
 usage(){
-  printf "            ${project^^}
+  printf "\nQuote of the Day
 
-    \r            Fetch and output a new quote every day.
+    DESCRIPTION:  Fetch and output a new quote every day.
 
-    \rSYNTAX:     ${0##*/} [OPTS]
+    SYNTAX:       ${project} [OPTS]
 
-    \rOPTS:       --help|-h|-?            - Displays this help information.
+    OPTS:         --help|-h|-?            - Displays this help information.
    
-    \rSITE:       $url
+    SITE:         ${url}
   "
 
   exit 0

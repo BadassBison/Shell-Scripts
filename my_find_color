@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# my_find_color
+
+project="${0##*/}"
+url="https://color.adobe.com/create"
+
+# Help message
+usage(){
+  printf "\nFind a Color
+
+    DESCRIPTION:  Opens Adobe color in the browser
+
+    SYNTAX:       ${project} [OPTS]
+
+    OPTS:         --help|-h|-?            - Displays this help information.
+   
+    SITE:         ${url}
+  "
+
+  exit 0
+}
+
+case "$1" in
+  --help|-h|-\?)
+    usage ;;
+esac
+
+open "$url"

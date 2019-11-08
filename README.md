@@ -92,6 +92,7 @@ alias show_notes=my_show_notes              # Show all notes in notes.txt
 alias qod=my_quote_of_the_day               # Fetch a new quote everyday
 alias trash=my_mv_file_to_trash             # Move file to trash
 alias capi=dotnet_create_api                # Build new dotnet api
+alias findcolor=my_find_color               # Open Adobe color in browser
 ```
 
 ***
