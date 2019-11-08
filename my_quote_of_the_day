@@ -57,6 +57,8 @@ do
   fi
 done <<< "$($cmd "$url")"
 
+printf "\n"
+
 if type -fP fold tput > /dev/null 2>&1
 then
   printf "%s\n" "${quote# }" | fold -sw `tput cols`
