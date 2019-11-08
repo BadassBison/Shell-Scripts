@@ -1,22 +1,70 @@
 #!/bin/bash
-    
 # Quote of the day
 # Author: Shawn Scott
 
-# Help message
-if [[ $1 = -h ]] || [[ $1 = --help ]]
+project="${0##*/}"
+
+url="http://quotes.rest/qod.json?category=inspire"
+
+usage(){
+  printf "            ${project^^}
+
+    \r            Fetch and output a new quote every day.
+
+    \rSYNTAX:     ${0##*/} [OPTS]
+
+    \rOPTS:       --help|-h|-?            - Displays this help information.
+   
+    \rSITE:       $url
+  "
+
+  exit 0
+}
+
+case "$1" in
+  --help|-h|-\?)
+    usage ;;
+esac
+
+if [ $# -gt 0 ]
 then
-  echo "
-$(basename "$0") [-h] (name)
-  -- script to fetch a new quote everyday
-
-where:
-  -h (--help) show help text
-
-  exit 0;"
+  printf "ERROR: Invalid argument(s) detected.\n" >&2
+  exit 1
 fi
 
-# needs to filter out extra contents and return only the qoute to the terminal
-# API has a 10 request per hour limit
-quote=$(curl "http://quotes.rest/qod.json?category=inspire")
-echo "$quote" | grep -o '' > notes/quote.txt
+# Check for curl, if not found, then try wget, else bail. Both will run quietly and
+# allow for continuation, should for some reason the connection be lost mid-way.
+if type -fP curl > /dev/null 2>&1
+then
+  cmd='curl -C - -s'
+elif type -fP curl > /dev/null 2>&1
+then
+  cmd='wget -qc'
+else
+  printf "ERROR: Unable to find suitable downloader.\n" >&2
+  exit 1
+fi
+
+# Output and, if possible, wrap the quote, followed by the author.
+while IFS=':' read -a line
+do
+  if [ "${line[0]//[\" ]}" == 'quote' ]
+  then
+    quote="${line[1]%,}"
+  elif [ "${line[0]//[\" ]}" == 'author' ]
+  then
+    author="${line[1]//[,\"]}"
+    break
+  fi
+done <<< "$($cmd "$url")"
+
+if type -fP fold tput > /dev/null 2>&1
+then
+  printf "%s\n" "${quote# }" | fold -sw `tput cols`
+else
+  printf "%s\n" "${quote# }"
+fi
+
+printf "\n    - %s\n" "${author# }"
+
+#echo "$quote" | grep -o '' > notes/quote.txt
