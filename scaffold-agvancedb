@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# scaffold-agvancedb
+
+# Help message
+if [[ $1 = -h ]] || [[ $1 = --help ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to <add content here>
+
+where:
+  -h (--help) show help text
+
+  exit 0;"
+fi
+
+dotnet ef dbcontext scaffold \
+"Server=legacy.data.agvancesky.net;Database=APIData_AB;User Id=Agvance;Password=AgvSQL2000;" \
+Microsoft.EntityFrameworkCore.SqlServer \
+-d -v -f -c DatabaseContext -o ./FixtureTest \
+-t MpssuBoundaries -t PRODSET -t PRODUCT -t Location -t Prodsaf -t Grower -t Fldblend -t BlendFields -t Fields -t Blndli

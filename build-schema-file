@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# build-schema-file
+
+# Help message
+if [[ $1 = -h ]] || [[ $1 = --help ]]
+then
+  echo "
+$(basename "$0") [-h] (name)
+  -- script to <add content here>
+
+where:
+  -h (--help) show help text
+
+  exit 0;"
+fi
+
+echo `
+mssql-scripter \
+--server legacy.data.agvancesky.net \
+--database APIData_AB \
+--user Agvance \
+--password AgvSQL2000 \
+--include-objects dbo.LOCATION \
+# dbo.PRODUCT dbo.DEPARTMT dbo.PRODSET dbo.BLNDPREF \
+> ./Schema.sql`

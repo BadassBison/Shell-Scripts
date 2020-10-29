@@ -1,0 +1,21 @@
+javascript: 
+function run() { 
+    let data = "client_id=skydentity-password-grant-client&client_secret=skydentity-api-secret&grant_type=password&scope=openid%20skydentity%20profile&username=validuser@example.com&password=valid_password";
+
+    let xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function() {
+      if(this.readyState === 4) {
+          let data = JSON.parse(this.responseText);
+          localStorage.setItem("Authorization", data.access_token);
+          document.location.reload(true);
+      }
+    });
+
+    xhr.open("POST", "https://skydentityapi-dev.agvancesky.com/connect/token");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.send(data);
+}
+run();
