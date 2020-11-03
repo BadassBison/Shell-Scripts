@@ -16,13 +16,10 @@ Options:
   exit 0;
 fi
 
-# Width of columns
-width=32
-
 printf "\e[31m
 Files______________________\e[00m\n"
-printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -p | grep -v / | sort -f)
+printf "\e[32m|%${WIDTH}s \e[35m|%${WIDTH}s \e[36m|%${WIDTH}s |\e[00m\n" $(ls -p | grep -v / | sort -f)
 
 printf "\e[31m
 Directories________________\e[00m\n"
-printf "\e[32m|%${width}s \e[35m|%${width}s \e[36m|%${width}s |\e[00m\n" $(ls -d */ | sort -f)
+printf "\e[32m|%${WIDTH}s \e[35m|%${WIDTH}s \e[36m|%${WIDTH}s |\e[00m\n" $(ls -d */ | sort -f)
